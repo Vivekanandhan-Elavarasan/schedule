@@ -48,9 +48,11 @@ export class NgbdModalContent {
   public buttonClick(): void {
 
       this.myOutput.emit('helloworld');
-      console.log("output works")
+     
 
   }
+
+  //stored the array of values in index.html
 
   constructor(public activeModal: NgbActiveModal) {
     

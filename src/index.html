@@ -11,3 +11,23 @@
   <app-root></app-root>
 </body>
 </html>
+
+<script>
+  // stored array of details
+  var details=[];
+  function myfunction( ) {
+    var items = [];
+ title = document.getElementById('title').value;
+ items.push(title); 
+ type = document.getElementById('type').value;
+ items.push(type);
+ content = document.getElementById('content').value;
+ items.push(content);  
+ mentor = document.getElementById('mentor').value;
+ items.push(mentor); 
+  details.push(items);
+  console.log(details);
+  console.log("output works");
+  }
+
+  </script>

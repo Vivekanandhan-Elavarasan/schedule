@@ -1,17 +1,26 @@
-.btn-danger {
-    font-family: Raleway-SemiBold;
-    font-size: 13px;
-    color: rgba(217, 83, 78, 0.75);
-    letter-spacing: 1px;
-    line-height: 15px;
-    border: 2px solid rgba(217, 83, 78, 0.75);
-    border-radius: 40px;
+.add {
     background: transparent;
-    transition: all 0.3s ease 0s;
-  }
-  
-  .btn-danger:hover {
-    color: #FFF;
-    background: rgba(217, 83, 78, 0.75);
-    border: 2px solid rgba(217, 83, 78, 0.75);
-  }
+    border: none;
+}
+
+.tempContent {
+    background-color: white;
+}
+
+.borderBottom {
+    border-bottom: 2px solid black;
+}
+
+a {
+    color: darkblue;
+    font-size: 1.2rem;
+}
+
+a:hover {
+    font-size: 1.3rem;
+    text-decoration: none;
+}
+
+.selected {
+    color: rgb(74, 40, 167);
+}

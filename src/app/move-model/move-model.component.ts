@@ -1,29 +1,24 @@
 import { Component, OnInit, Input } from '@angular/core';
 import {NgbModal, ModalDismissReasons} from '@ng-bootstrap/ng-bootstrap';
-import { faPlusCircle } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
-  selector: 'app-modal',
-  templateUrl: './modal.component.html',
-  styleUrls: ['./modal.component.css']
+  selector: 'app-move-model',
+  templateUrl: './move-model.component.html',
+  styleUrls: ['./move-model.component.css']
 })
-export class ModalComponent implements OnInit {
-  @Input("global") global;
-  @Input("days") days;
+export class MoveModelComponent implements OnInit {
+
+  @Input('global') global;
+  @Input('days') days;
+  @Input('i') i;
+  moveDay=0;
+
   closeResult = '';
-  faPlusCircle = faPlusCircle;
-  obj={
-    title: '',
-    type: 'Task',
-    content: '',
-    mentorInst: ''
-  }
   constructor(private modalService: NgbModal) { }
 
   ngOnInit(): void {
   }
-
-   open(content) {
+  open(content) {
     this.modalService.open(content, {ariaLabelledBy: 'modal-basic-title'}).result.then((result) => {
       this.closeResult = `Closed with: ${result}`;
     }, (reason) => {
@@ -43,14 +38,9 @@ export class ModalComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
-  saveData(){
-    this.days[this.global.currentDay].topics.push(this.obj);
-    this.obj={
-      title: '',
-      type: 'Task',
-      content: '',
-      mentorInst: ''
-    }
+  move(){
+    this.days[this.moveDay].topics.push(this.days[this.global.currentDay].topics.splice(this.i,1)[0]);
+    this.global.currentTopic=0;
+    console.log(this.days);
   }
-  
 }
